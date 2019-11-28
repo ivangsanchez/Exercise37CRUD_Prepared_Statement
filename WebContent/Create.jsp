@@ -15,7 +15,7 @@
 	
 	<p>
 	<label for="txtIdEmployee"> Id Employee</label>
-	<input class="form-control" type="text" id="txtIdEmployee" name="txtIdEmployee">
+	<input class="form-control" type="text" id="txtIdEmployee" name="txtIdEmployee" disabled placeholder="ID Product Generated Automatically">
 	</p>
 	
 	<p>

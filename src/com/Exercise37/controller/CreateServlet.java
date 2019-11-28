@@ -26,7 +26,7 @@ public class CreateServlet extends HttpServlet {
 		
 		Employee myEmployee = new Employee();
 		
-		myEmployee.setIdEmployee(Integer.parseInt(request.getParameter("txtIdEmployee"))); 
+		//myEmployee.setIdEmployee(Integer.parseInt(request.getParameter("txtIdEmployee"))); 
 		myEmployee.setNameEmployee(request.getParameter("txtNameEmployee"));
 		myEmployee.setAgeEmployee(Integer.parseInt(request.getParameter("txtAgeEmployee")));
 		myEmployee.setAddressEmployee(request.getParameter("txtAddressEmployee"));
@@ -52,12 +52,24 @@ public class CreateServlet extends HttpServlet {
 			
 			//4 Abrimos la conexion
 			
-			DriverManager.getConnection(urlServer,username,pass);
+			conn=DriverManager.getConnection(urlServer,username,pass);
 			
 			//5 configuramos el prepared statement
 			
 			pstmnt=conn.prepareStatement(sentenciaSQLPreparedStatement);
+			pstmnt.setString(1, myEmployee.getNameEmployee());
+			pstmnt.setInt(2, myEmployee.getAgeEmployee());
+			pstmnt.setString(3, myEmployee.getAddressEmployee());
+			pstmnt.setDouble(4, myEmployee.getSalaryEmployee());
+			pstmnt.setString(5, myEmployee.getDepartmentEmployee());
 			
+			rowsAffected=pstmnt.executeUpdate();
+			if(rowsAffected>0) {
+				output.append("Registro añadido con exito!");
+			}
+			else {
+				output.append("Registro No añadido!");
+			}
 			
 		}catch(Exception e)
 		{
