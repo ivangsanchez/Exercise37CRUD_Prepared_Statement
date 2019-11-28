@@ -1,0 +1,9 @@
+#Variables de Conexion
+urlServer=jdbc:mysql://localhost:3306/tienda?useSSL=false&serverTimezone=UTC
+username=root
+password=admin
+
+#sentencias SQL Empleados
+SQLRead=select * from Empleados
+
+#Sentencias SQL Productos
