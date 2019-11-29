@@ -26,6 +26,7 @@ Es lo mismo pero con una lista
 	  <a href="Read.jsp" class="list-group-item list-group-item-action">Read</a>
 	  <a href="Update.jsp" class="list-group-item list-group-item-action">Update</a>
 	  <a href="Delete.jsp" class="list-group-item list-group-item-action">Delete</a>
+	  <a href="Transaction.jsp" class="list-group-item list-group-item-action">Transaction</a>
 	</div>
 
 
